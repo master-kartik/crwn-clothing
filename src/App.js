@@ -1,5 +1,5 @@
-import CardItem from "./components/category-item/category-item.component.jsx"
-import "./categories.styles.scss"
+
+import Categories from "./components/categories/categories.component.jsx"
 const App=()=>{
   const categories = [
     {
@@ -30,13 +30,7 @@ const App=()=>{
   ]
 
 return(
-  <div className='categories-container'>
-{categories.map(({categories})=>(
-  <CardItem categories={categories}/>
-
-))}
-</div>
-// checking
+  <Categories categories={categories}/>
 
 
 )
