@@ -6,7 +6,8 @@ import CheckoutItem from '../../components/checkout-item/checkout-item.component
 
 
 const Checkout = ()=>{
-    const {cartItems, addItemToCart, removeItemToCart} = useContext(CartContext)
+    const {cartItems} = useContext(CartContext)
+
     return (
         <div className='checkout-container'>
             <div className="checkout-header">
