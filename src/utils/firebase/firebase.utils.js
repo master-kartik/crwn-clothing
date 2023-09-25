@@ -11,9 +11,12 @@ import {signInWithEmailAndPassword,
 } from 'firebase/auth'
 import {getFirestore,
     doc,getDoc,
+    
     setDoc,
 collection,
-writeBatch} from "firebase/firestore"
+writeBatch,
+query,
+getDocs} from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyB8p2GxSEZopnFF_sqHdV1Q-iF40FJjp1U",
@@ -46,8 +49,22 @@ export const addCollectionAndDocuments = async(collectionKey, objectsToAdd)=>{
                     batch.set(docRef, object)
                 });
                 await batch.commit() 
-                console.log('done');
+                
 
+}
+
+export const getCollectionAndDocuments=async()=>{
+    const collectionRef = collection(db, 'categories')
+    const q =  query(collectionRef)
+    const querySnapshot = await(getDocs(q))
+    const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot)=>{
+        const { title, items }=  docSnapshot.data()
+        acc[title.toLowerCase()] =  items
+        return acc;
+
+
+    },{})
+    return categoryMap
 }
 
 export const createUserDocumentFromAuth = async (userAuth,
