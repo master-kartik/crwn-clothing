@@ -8,7 +8,7 @@ const Shop = ()=>{
         
           <Routes>
             <Route index element={<CategoriesPreview />}></Route>
-            <Route path=":category" element={<Categosry />}/>
+            <Route path=":category" element={<Category />}/>
           </Routes>
             
 
