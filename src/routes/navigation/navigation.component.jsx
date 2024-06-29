@@ -15,7 +15,7 @@ const Navigation = () => {
     return(
       <Fragment>
         <div className="navigation">
-            <Link className="logo-container" to={'/'}><div><CrwnLogo /></div></Link>
+            <Link className="logo-container" to={'/'}><img className="logo" src="./logo.png" alt="" /></Link>
           <div className="nav-links-container">
             <Link className="nav-link" to={'/shop'}>Shop</Link>
           {currentUser ? (<span className="nav-link" onClick={signOutUser}>Sign Out</span>) : (<Link className="nav-link" to={'/auth'}>Sign In</Link>)}
