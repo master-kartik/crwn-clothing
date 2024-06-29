@@ -1,6 +1,6 @@
 const SHOP_DATA = [
   {
-    title: 'Hats',
+    title: 'Phone',
     items: [
       {
         id: 1,
